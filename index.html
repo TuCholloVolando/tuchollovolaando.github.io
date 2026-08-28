@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuCholloVolando — Ofertas de Viajes Baratos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+        }
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0077b6, #00b4d8);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        /* Navigation */
+        nav {
+            background: #023e8a;
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            color: #0077b6;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #00b4d8;
+            padding-bottom: 0.5rem;
+        }
+        /* Offer Cards */
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        .offer-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .offer-card:hover {
+            transform: translateY(-5px);
+        }
+        .offer-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .offer-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #e63946;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .offer-content {
+            padding: 1.2rem;
+        }
+        .offer-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #023e8a;
+        }
+        .offer-content p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        .offer-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #e63946;
+        }
+        .price span {
+            font-size: 0.8rem;
+            color: #999;
+            text-decoration: line-through;
+        }
+        .btn-offer {
+            background: #0077b6;
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .btn-offer:hover {
+            background: #005f8a;
+        }
+        /* Featured Section */
+        .featured {
+            background: linear-gradient(135deg, #0077b6, #00b4d8);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        .featured h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .featured p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        .btn-featured {
+            background: white;
+            color: #0077b6;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        .btn-featured:hover {
+            transform: scale(1.05);
+        }
+        /* Tips Section */
+        .tips {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        .tip-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .tip-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .tip-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #023e8a;
+        }
+        .tip-card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        /* Newsletter */
+        .newsletter {
+            background: #023e8a;
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .newsletter h2 {
+            margin-bottom: 1rem;
+        }
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .newsletter-form input {
+            padding: 0.8rem 1.2rem;
+            border: none;
+            border-radius: 25px;
+            width: 300px;
+            font-size: 1rem;
+        }
+        .newsletter-form button {
+            background: #e63946;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .newsletter-form button:hover {
+            background: #c1121f;
+        }
+        /* Footer */
+        footer {
+            background: #023e8a;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        footer a {
+            color: #90e0ef;
+            text-decoration: none;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>✈️ TuCholloVolando</h1>
+        <p>Las mejores ofertas de viajes al mejor precio</p>
+    </header>
+    
+    <nav>
+        <a href="#ofertas">Ofertas</a>
+        <a href="#destinos">Destinos</a>
+        <a href="#consejos">Consejos</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+    
+    <main>
+        <!-- Featured Offer -->
+        <section class="featured">
+            <h2>🔥 Oferta del Día</h2>
+            <p>Escapada a PortAventura Hotel + Entrada 2 días desde 149 €/persona</p>
+            <a href="https://www.logitravel.com/viajes/espana/portaventura/" class="btn-featured" target="_blank">Ver Oferta →</a>
+        </section>
+        
+        <!-- Offers Section -->
+        <section id="ofertas">
+            <h2 class="section-title">🌟 Últimas Ofertas</h2>
+            <div class="offers-grid">
+                <!-- Offer 1 -->
+                <div class="offer-card">
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800')">
+                        <span class="offer-badge">-40%</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Paris Disneyland + Hotel 3*</h3>
+                        <p>3 noches con desayuno incluido + entrada al parque</p>
+                        <div class="offer-price">
+                            <div class="price">299 € <span>499 €</span></div>
+                            <a href="https://www.logitravel.com/viajes/europa/francia/disneyland-paris/" class="btn-offer" target="_blank">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Offer 2 -->
+                <div class="offer-card">
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=800')">
+                        <span class="offer-badge">Últimas plazas</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Tenerife Todo Incluido 4*</h3>
+                        <p>7 noches + vuelos ida y vuelta + transfer</p>
+                        <div class="offer-price">
+                            <div class="price">589 € <span>899 €</span></div>
+                            <a href="https://www.logitravel.com/viajes/espana/tenerife/" class="btn-offer" target="_blank">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Offer 3 -->
+                <div class="offer-card">
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=800')">
+                        <span class="offer-badge">Flash Sale</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>London City Break</h3>
+                        <p>2 noches + vuelos + desayuno</p>
+                        <div class="offer-price">
+                            <div class="price">189 € <span>320 €</span></div>
+                            <a href="https://www.logitravel.com/viajes/europa/reino-unido/londres/" class="btn-offer" target="_blank">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Offer 4 -->
+                <div class="offer-card">
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800')">
+                        <span class="offer-badge">-35%</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Cancún All Inclusive 5*</h3>
+                        <p>7 noches + vuelos + traslados + seguro</p>
+                        <div class="offer-price">
+                            <div class="price">1.199 € <span>1.849 €</span></div>
+                            <a href="https://www.logitravel.com/viajes/mexico/cancun/" class="btn-offer" target="_blank">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Offer 5 -->
+                <div class="offer-card">
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800')">
+                        <span class="offer-badge">Nuevo</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Venecia Romántica</h3>
+                        <p>4 noches + vuelos + hotel céntrico</p>
+                        <div class="offer-price">
+                            <div class="price">349 € <span>549 €</span></div>
+                            <a href="https://www.logitravel.com/viajes/europa/italia/venecia/" class="btn-offer" target="_blank">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Offer 6 -->
+                <div class="offer-card">
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800')">
+                        <span class="offer-badge">-25%</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Dubái Lujo 5*</h3>
+                        <p>5 noches + vuelos + desayuno + transfer</p>
+                        <div class="offer-price">
+                            <div class="price">899 € <span>1.199 €</span></div>
+                            <a href="https://www.logitravel.com/viajes/emiratos-arabes/dubai/" class="btn-offer" target="_blank">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Tips Section -->
+        <section id="consejos">
+            <h2 class="section-title">💡 Consejos para Viajar Barato</h2>
+            <div class="tips">
+                <div class="tip-card">
+                    <div class="tip-icon">📅</div>
+                    <h3>Flexibilidad de Fechas</h3>
+                    <p>Viajar entre semana o fuera de temporada puede ahorrarte hasta un 40%</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🔔</div>
+                    <h3>Alertas de Precio</h3>
+                    <p>Activa las alertas para recibir notificaciones cuando bajen los precios</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">📱</div>
+                    <h3>Reserva por App</h3>
+                    <p>Muchas agencias ofrecen descuentos exclusivos para reservas desde la app</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">💳</div>
+                    <h3>Pago Flexible</h3>
+                    <p>Aprovecha las opciones de pago sin intereses para mejorar tu flujo de caja</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <h2>📬 Recibe Ofertas Exclusivas</h2>
+            <p>Suscríbete y recibe las mejores ofertas directamente en tu email</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Tu email..." required>
+                <button type="submit">Suscribirme</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <p><strong>TuCholloVolando</strong> — Las mejores ofertas de viajes</p>
+        <p>Síguenos en redes sociales</p>
+        <p><a href="#">Instagram</a> | <a href="#">TikTok</a> | <a href="#">YouTube</a></p>
+        <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.7;">© 2026 TuCholloVolando. Todos los derechos reservados.</p>
+        <p style="font-size: 0.7rem; opacity: 0.5;">Al hacer clic en "Reservar" serás redirigido a Logitravel. Esta web utiliza enlaces de afiliados.</p>
+    </footer>
+</body>
+</html>
