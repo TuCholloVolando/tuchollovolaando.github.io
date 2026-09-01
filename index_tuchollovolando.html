@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuCholloVolando — Ofertas de Viajes Baratos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background: #f8f9fa; color: #333; }
+        header { background: linear-gradient(135deg, #0077b6, #00b4d8); color: white; padding: 2rem 1rem; text-align: center; }
+        header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+        header p { font-size: 1.1rem; opacity: 0.9; }
+        nav { background: #023e8a; padding: 1rem; text-align: center; position: sticky; top: 0; z-index: 100; }
+        nav a { color: white; text-decoration: none; margin: 0 1rem; font-weight: 500; }
+        nav a:hover { text-decoration: underline; }
+        main { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
+        .section-title { font-size: 1.5rem; color: #0077b6; margin-bottom: 1.5rem; border-bottom: 3px solid #00b4d8; padding-bottom: 0.5rem; }
+        .section-icon { margin-right: 0.5rem; }
+        .offers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+        .offer-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .offer-card:hover { transform: translateY(-5px); }
+        .offer-image { height: 200px; background-size: cover; background-position: center; position: relative; }
+        .offer-badge { position: absolute; top: 10px; right: 10px; background: #e63946; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-weight: 600; font-size: 0.9rem; }
+        .offer-content { padding: 1.2rem; }
+        .offer-content h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: #023e8a; }
+        .offer-content p { font-size: 0.9rem; color: #666; margin-bottom: 1rem; }
+        .offer-price { display: flex; justify-content: space-between; align-items: center; }
+        .price { font-size: 1.3rem; font-weight: 700; color: #e63946; }
+        .price span { font-size: 0.8rem; color: #999; text-decoration: line-through; }
+        .btn-offer { background: #0077b6; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 25px; cursor: pointer; font-weight: 600; text-decoration: none; transition: background 0.3s; }
+        .btn-offer:hover { background: #005f8a; }
+        .featured { background: linear-gradient(135deg, #0077b6, #00b4d8); color: white; padding: 3rem 2rem; border-radius: 12px; margin-bottom: 3rem; text-align: center; }
+        .featured h2 { font-size: 1.8rem; margin-bottom: 1rem; }
+        .featured p { font-size: 1.1rem; margin-bottom: 1.5rem; opacity: 0.9; }
+        .btn-featured { background: white; color: #0077b6; padding: 0.8rem 2rem; border-radius: 25px; text-decoration: none; font-weight: 600; transition: transform 0.3s; }
+        .btn-featured:hover { transform: scale(1.05); }
+        .section-divider { border: 0; height: 3px; background: linear-gradient(90deg, #0077b6, #00b4d8); margin: 3rem 0; }
+        footer { background: #023e8a; color: white; text-align: center; padding: 2rem 1rem; }
+        footer p { margin-bottom: 0.5rem; }
+        footer a { color: #90e0ef; text-decoration: none; }
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.5rem; }
+            nav a { display: block; margin: 0.5rem 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>✈️ TuCholloVolando</h1>
+        <p>Las mejores ofertas de viajes al mejor precio</p>
+    </header>
+    
+    <nav>
+        <a href="#madrid">Madrid</a>
+        <a href="#barcelona">Barcelona</a>
+        <a href="#parques">Parques</a>
+        <a href="#espana">España</a>
+        <a href="#europa">Europa</a>
+    </nav>
+    
+    <main>
+        <!-- Featured Offer -->
+        <section class="featured">
+            <h2>🔥 Oferta del Día</h2>
+            <p>Entradas a Disneyland Paris — El parque de los sueños te espera</p>
+            <a href="https://www.tiqets.com/es/checkout/entradas-para-disneyland-r-paris-billete-de-admision-g1111509/?partner=tuchollovolando-189662" class="btn-featured" target="_blank">Reservar en Tiqets →</a>
+        </section>
+
+        <!-- ========== MADRID ========== -->
+        <section id="madrid">
+            <h2 class="section-title"><span class="section-icon">🏙️</span> Madrid</h2>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=800')">
+                        <span class="offer-badge">Nuevo</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Warner Bros Park Madrid</h3>
+                        <p>Entrada de 1 día al parque temático</p>
+                        <div class="offer-price">
+                            <div class="price">42 €</div>
+                            <a href="https://www.tiqets.com/es/buscar?query=warner+brothers+madrid&partner=tuchollovolando-189662" class="btn-offer" target="_blank">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800')">
+                        <span class="offer-badge">-20%</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Museo del Prado + Reina Sofía</h3>
+                        <p>Entrada combinada 2 museos</p>
+                        <div class="offer-price">
+                            <div class="price">18 €</div>
+                            <a href="https://www.tiqets.com/es/buscar?query=museo+prado+madrid&partner=tuchollovolando-189662" class="btn-offer" target="_blank">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800')">
+                        <span class="offer-badge">Popular</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Estadio Santiago Bernabéu</h3>
+                        <p>Visita guiada al estadio del Real Madrid</p>
+                        <div class="offer-price">
+                            <div class="price">30 €</div>
+                            <a href="https://www.tiqets.com/es/buscar?query=bernabeu+madrid&partner=tuchollovolando-189662" class="btn-offer" target="_blank">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ========== BARCELONA ========== -->
+        <section id="barcelona">
+            <h2 class="section-title"><span class="section-icon">🏖️</span> Barcelona</h2>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800')">
+                        <span class="offer-badge">Nuevo</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Sagrada Familia + Torre</h3>
+                        <p>Entrada entrada + ascensor a la torre</p>
+                        <div class="offer-price">
+                            <div class="price">36 €</div>
+                            <a href="https://www.tiqets.com/es/buscar?query=sagrada+familia+barcelona&partner=tuchollovolando-189662" class="btn-offer" target="_blank">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1523531294919-4bcd7c65ef14?w=800')">
+                        <span class="offer-badge">-15%</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>FC Barcelona — Camp Nou</h3>
+                        <p>Visita guiada al Camp Nou Experience</p>
+                        <div class="offer-price">
+                            <div class="price">28 €</div>
+                            <a href="https://www.tiqets.com/es/buscar?query=fc+barcelona+camp+nou&partner=tuchollovolando-189662" class="btn-offer" target="_blank">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=800')">
+                        <span class="offer-badge">Top</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Park Güell + Casa Batlló</h3>
+                        <p>Entrada combinada a 2 monumentos Gaudí</p>
+                        <div class="offer-price">
+                            <div class="price">42 €</div>
+                            <a href="https://www.tiqets.com/es/buscar?query=gaudi+barcelona&partner=tuchollovolando-189662" class="btn-offer" target="_blank">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ========== PARQUES ========== -->
+        <section id="parques">
+            <h2 class="section-title"><span class="section-icon">🎢</span> Parques Temáticos</h2>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800')">
+                        <span class="offer-badge">Disneyland</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Disneyland Paris</h3>
+                        <p>Entrada de 1 día al parque</p>
+                        <div class="offer-price">
+                            <div class="price">62 €</div>
+                            <a href="https://www.tiqets.com/es/checkout/entradas-para-disneyland-r-paris-billete-de-admision-g1111509/?partner=tuchollovolando-189662" class="btn-offer" target="_blank">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=800')">
+                        <span class="offer-badge">PortAventura</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>PortAventura Park</h3>
+                        <p>Entrada de 1 día + Ferrari Land</p>
+                        <div class="offer-price">
+                            <div class="price">45 €</div>
+                            <a href="https://www.tiqets.com/es/buscar?query=portaventura&partner=tuchollovolando-189662" class="btn-offer" target="_blank">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800')">
+                        <span class="offer-badge">Mario</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Universal Studios Japan</h3>
+                        <p>Super Nintendo World + Harry Potter</p>
+                        <div class="offer-price">
+                            <div class="price">59 €</div>
+                            <a href="https://www.tiqets.com/es/buscar?query=universal+studios+japan&partner=tuchollovolando-189662" class="btn-offer" target="_blank">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ========== ESPAÑA ========== -->
+        <section id="espana">
+            <h2 class="section-title"><span class="section-icon">🇪🇸</span> España</h2>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800')">
+                        <span class="offer-badge">-35%</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Tenerife Todo Incluido</h3>
+                        <p>7 noches hotel 4* + vuelos + traslados</p>
+                        <div class="offer-price">
+                            <div class="price">589 €</div>
+                            <a href="https://www.logitravel.com/viajes/espana/tenerife/" class="btn-offer" target="_blank">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=800')">
+                        <span class="offer-badge">Playa</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Málaga + Costa del Sol</h3>
+                        <p>5 noches hotel + vuelos + desayuno</p>
+                        <div class="offer-price">
+                            <div class="price">349 €</div>
+                            <a href="https://www.logitravel.com/viajes/espana/malaga/" class="btn-offer" target="_blank">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800')">
+                        <span class="offer-badge">Familia</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Benidorm + Terra Mítica</h3>
+                        <p>5 noches hotel + entrada parque</p>
+                        <div class="offer-price">
+                            <div class="price">299 €</div>
+                            <a href="https://www.logitravel.com/viajes/espana/benidorm/" class="btn-offer" target="_blank">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ========== EUROPA ========== -->
+        <section id="europa">
+            <h2 class="section-title"><span class="section-icon">🌍</span> Europa</h2>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800')">
+                        <span class="offer-badge">-40%</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>París Disneyland + Hotel</h3>
+                        <p>3 noches con desayuno + entrada parque</p>
+                        <div class="offer-price">
+                            <div class="price">299 €</div>
+                            <a href="https://www.tiqets.com/es/checkout/entradas-para-disneyland-r-paris-billete-de-admision-g1111509/?partner=tuchollovolando-189662" class="btn-offer" target="_blank">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800')">
+                        <span class="offer-badge">Nuevo</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Venecia Romántica</h3>
+                        <p>4 noches + vuelos + hotel céntrico</p>
+                        <div class="offer-price">
+                            <div class="price">349 €</div>
+                            <a href="https://www.logitravel.com/viajes/europa/italia/venecia/" class="btn-offer" target="_blank">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-image" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800')">
+                        <span class="offer-badge">Lujo</span>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Dubái 5* Todo Incluido</h3>
+                        <p>5 noches + vuelos + desayuno + transfer</p>
+                        <div class="offer-price">
+                            <div class="price">899 €</div>
+                            <a href="https://www.logitravel.com/viajes/emiratos-arabes/dubai/" class="btn-offer" target="_blank">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer>
+        <p><strong>TuCholloVolando</strong> — Las mejores ofertas de viajes</p>
+        <p>Síguenos en redes sociales</p>
+        <p><a href="#">Instagram</a> | <a href="#">TikTok</a> | <a href="#">YouTube</a></p>
+        <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.7;">© 2026 TuCholloVolando. Todos los derechos reservados.</p>
+        <p style="font-size: 0.7rem; opacity: 0.5;">Esta web utiliza enlaces de afiliados de Tiqets y Logitravel. Si compras a través de ellos, me ayudas a mantener esta web.</p>
+    </footer>
+</body>
+</html>
